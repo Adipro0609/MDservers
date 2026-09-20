@@ -1,0 +1,12 @@
+{
+  "name": "md-servers",
+  "version": "1.0.0",
+  "description": "Free Minecraft hosting",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
