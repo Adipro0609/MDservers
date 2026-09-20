@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>MD Servers</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #0f1117;
+      color: white;
+      min-height: 100vh;
+    }
+
+    header {
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 25px;
+      background: #171a22;
+      border-bottom: 1px solid #292d38;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .logo span {
+      color: #4ade80;
+    }
+
+    .login {
+      background: #4ade80;
+      color: #07130b;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 70px auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 48px;
+      margin-bottom: 15px;
+    }
+
+    .description {
+      color: #a7adba;
+      font-size: 18px;
+      margin-bottom: 35px;
+    }
+
+    .create {
+      background: #4ade80;
+      color: #07130b;
+      border: none;
+      padding: 15px 25px;
+      border-radius: 10px;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .create:hover,
+    .login:hover {
+      opacity: 0.85;
+    }
+
+    .servers {
+      margin-top: 60px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .server-card {
+      background: #171a22;
+      border: 1px solid #292d38;
+      border-radius: 12px;
+      padding: 25px;
+      text-align: left;
+    }
+
+    .server-card h2 {
+      margin-bottom: 10px;
+    }
+
+    .offline {
+      color: #f87171;
+    }
+
+    footer {
+      text-align: center;
+      color: #666b78;
+      padding: 40px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">
+      <span>MD</span> Servers
+    </div>
+
+    <button class="login">
+      Login
+    </button>
+  </header>
+
+  <main>
+
+    <h1>Free Minecraft Hosting</h1>
+
+    <p class="description">
+      Create, manage and play on your Minecraft server.
+    </p>
+
+    <button class="create" onclick="createServer()">
+      + Create Server
+    </button>
+
+    <div class="servers" id="servers">
+
+      <div class="server-card">
+        <h2>No servers yet</h2>
+        <p class="offline">
+          Create your first server.
+        </p>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer>
+    © 2026 MD Servers
+  </footer>
+
+  <script>
+
+    function createServer() {
+
+      const name = prompt("Enter your server name:");
+
+      if (!name) {
+        return;
+      }
+
+      const servers = document.getElementById("servers");
+
+      servers.innerHTML = `
+        <div class="server-card">
+
+          <h2>${name}</h2>
+
+          <p class="offline">
+            ● Offline
+          </p>
+
+          <br>
+
+          <button class="create"
+                  onclick="alert('Server backend coming next!')">
+            Start Server
+          </button>
+
+        </div>
+      `;
+    }
+
+  </script>
+
+</body>
+</html>
